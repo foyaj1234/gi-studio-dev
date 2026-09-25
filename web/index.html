@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GI Studio Development</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+            </div>
+            <span class="loader-text">GI STUDIO</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-gi">GI</span>
+                <span class="logo-studio">STUDIO</span>
+                <span class="logo-dev">DEV</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-en="Home" data-bn="হোম">Home</a></li>
+                <li><a href="#about" class="nav-link" data-en="About" data-bn="আমাদের সম্পর্কে">About</a></li>
+                <li><a href="#services" class="nav-link" data-en="Services" data-bn="সেবাসমূহ">Services</a></li>
+                <li><a href="#portfolio" class="nav-link" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</a></li>
+                <li><a href="#team" class="nav-link" data-en="Team" data-bn="টিম">Team</a></li>
+                <li><a href="#testimonials" class="nav-link" data-en="Testimonials" data-bn="প্রশংসাপত্র">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-bn="যোগাযোগ">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="langEn" onclick="switchLang('en')">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" id="langBn" onclick="switchLang('bn')">বাং</button>
+                </div>
+
+                <a href="admin.html" class="admin-btn" title="Admin Panel">
+                    <i class="fas fa-cog"></i>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <i class="fas fa-rocket"></i>
+                <span data-en="Welcome to the Future" data-bn="ভবিষ্যতে স্বাগতম">Welcome to the Future</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up">
+                <span class="hero-line" data-en="We Craft" data-bn="আমরা তৈরি করি">We Craft</span>
+                <span class="hero-line gradient-text" data-en="Digital Excellence" data-bn="ডিজিটাল উৎকর্ষ">Digital Excellence</span>
+                <span class="hero-line" data-en="That Inspires" data-bn="যা অনুপ্রাণিত করে">That Inspires</span>
+            </h1>
+            <p class="hero-desc" data-aos="fade-up" data-delay="200" data-en="GI Studio Development transforms your vision into stunning digital reality. We build websites, apps, and brands that make an impact." data-bn="জিআই স্টুডিও ডেভেলপমেন্ট আপনার স্বপ্নকে অসাধারণ ডিজিটাল বাস্তবতায় রূপান্তরিত করে। আমরা ওয়েবসাইট, অ্যাপ এবং ব্র্যান্ড তৈরি করি যা প্রভাব ফেলে।">
+                GI Studio Development transforms your vision into stunning digital reality. We build websites, apps, and brands that make an impact.
+            </p>
+            <div class="hero-btns" data-aos="fade-up" data-delay="400">
+                <a href="#portfolio" class="btn btn-primary">
+                    <span data-en="View Our Work" data-bn="আমাদের কাজ দেখুন">View Our Work</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span data-en="Get in Touch" data-bn="যোগাযোগ করুন">Get in Touch</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-delay="600">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="150">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-en="Projects Done" data-bn="প্রজেক্ট সম্পন্ন">Projects Done</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="80">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-en="Happy Clients" data-bn="সন্তুষ্ট ক্লায়েন্ট">Happy Clients</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-en="Years Experience" data-bn="বছরের অভিজ্ঞতা">Years Experience</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-indicator">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <span class="scroll-text" data-en="Scroll Down" data-bn="নিচে স্ক্রল করুন">Scroll Down</span>
+            </a>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-en="Who We Are" data-bn="আমরা কে">Who We Are</span>
+                <h2 class="section-title" data-en="About GI Studio" data-bn="জিআই স্টুডিও সম্পর্কে">About GI Studio</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="about-img-wrapper">
+                        <div class="about-img-placeholder">
+                            <i class="fas fa-code"></i>
+                            <span>GI STUDIO</span>
+                        </div>
+                        <div class="about-experience-badge">
+                            <span class="exp-number">5+</span>
+                            <span class="exp-text" data-en="Years of Excellence" data-bn="বছরের শ্রেষ্ঠত্ব">Years of Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h3 data-en="We Build Digital Products That Drive Results" data-bn="আমরা ডিজিটাল পণ্য তৈরি করি যা ফলাফল আনে">We Build Digital Products That Drive Results</h3>
+                    <p data-en="GI Studio Development is a full-service digital agency specializing in web development, mobile app development, UI/UX design, and digital branding. Our team of passionate developers and designers work together to create exceptional digital experiences." data-bn="জিআই স্টুডিও ডেভেলপমেন্ট একটি পূর্ণ-সেবা ডিজিটাল এজেন্সি যা ওয়েব ডেভেলপমেন্ট, মোবাইল অ্যাপ ডেভেলপমেন্ট, ইউআই/ইউএক্স ডিজাইন এবং ডিজিটাল ব্র্যান্ডিংয়ে বিশেষজ্ঞ। আমাদের আবেগী ডেভেলপার এবং ডিজাইনারদের দল অসাধারণ ডিজিটাল অভিজ্ঞতা তৈরি করতে একসাথে কাজ করে।">
+                        GI Studio Development is a full-service digital agency specializing in web development, mobile app development, UI/UX design, and digital branding. Our team of passionate developers and designers work together to create exceptional digital experiences.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                            <span data-en="Custom Web Development" data-bn="কাস্টম ওয়েব ডেভেলপমেন্ট">Custom Web Development</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                            <span data-en="Mobile App Solutions" data-bn="মোবাইল অ্যাপ সমাধান">Mobile App Solutions</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                            <span data-en="UI/UX Design" data-bn="ইউআই/ইউএক্স ডিজাইন">UI/UX Design</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                            <span data-en="24/7 Support" data-bn="২৪/৭ সহায়তা">24/7 Support</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">
+                        <span data-en="Start a Project" data-bn="একটি প্রজেক্ট শুরু করুন">Start a Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-en="What We Do" data-bn="আমরা কী করি">What We Do</span>
+                <h2 class="section-title" data-en="Our Services" data-bn="আমাদের সেবাসমূহ">Our Services</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-delay="0">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="service-icon-bg"></div>
+                    </div>
+                    <h3 data-en="Web Development" data-bn="ওয়েব ডেভেলপমেন্ট">Web Development</h3>
+                    <p data-en="Building responsive, fast, and scalable websites using cutting-edge technologies." data-bn="অত্যাধুনিক প্রযুক্তি ব্যবহার করে রেসপনসিভ, দ্রুত এবং স্কেলেবল ওয়েবসাইট তৈরি।">Building responsive, fast, and scalable websites using cutting-edge technologies.</p>
+                    <a href="#" class="service-link" data-en="Learn More" data-bn="আরও জানুন">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-delay="100">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="service-icon-bg"></div>
+                    </div>
+                    <h3 data-en="App Development" data-bn="অ্যাপ ডেভেলপমেন্ট">App Development</h3>
+                    <p data-en="Native and cross-platform mobile applications for iOS and Android." data-bn="iOS এবং Android এর জন্য নেটিভ এবং ক্রস-প্ল্যাটফর্ম মোবাইল অ্যাপ্লিকেশন।">Native and cross-platform mobile applications for iOS and Android.</p>
+                    <a href="#" class="service-link" data-en="Learn More" data-bn="আরও জানুন">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-delay="200">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                        <div class="service-icon-bg"></div>
+                    </div>
+                    <h3 data-en="UI/UX Design" data-bn="ইউআই/ইউএক্স ডিজাইন">UI/UX Design</h3>
+                    <p data-en="Creating intuitive and beautiful user interfaces that users love." data-bn="স্বজ্ঞাত এবং সুন্দর ইউজার ইন্টারফেস তৈরি যা ব্যবহারকারীরা পছন্দ করে।">Creating intuitive and beautiful user interfaces that users love.</p>
+                    <a href="#" class="service-link" data-en="Learn More" data-bn="আরও জানুন">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-delay="300">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                        <div class="service-icon-bg"></div>
+                    </div>
+                    <h3 data-en="Digital Marketing" data-bn="ডিজিটাল মার্কেটিং">Digital Marketing</h3>
+                    <p data-en="SEO, social media marketing, and PPC campaigns that deliver results." data-bn="এসইও, সোশ্যাল মিডিয়া মার্কেটিং এবং পিপিসি ক্যাম্পেইন যা ফলাফল দেয়।">SEO, social media marketing, and PPC campaigns that deliver results.</p>
+                    <a href="#" class="service-link" data-en="Learn More" data-bn="আরও জানুন">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-delay="400">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon"><i class="fas fa-palette"></i></div>
+                        <div class="service-icon-bg"></div>
+                    </div>
+                    <h3 data-en="Branding" data-bn="ব্র্যান্ডিং">Branding</h3>
+                    <p data-en="Logo design, brand identity, and visual storytelling for your business." data-bn="আপনার ব্যবসার জন্য লোগো ডিজাইন, ব্র্যান্ড আইডেন্টিটি এবং ভিজ্যুয়াল স্টোরিটেলিং।">Logo design, brand identity, and visual storytelling for your business.</p>
+                    <a href="#" class="service-link" data-en="Learn More" data-bn="আরও জানুন">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-delay="500">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon"><i class="fas fa-server"></i></div>
+                        <div class="service-icon-bg"></div>
+                    </div>
+                    <h3 data-en="Cloud Solutions" data-bn="ক্লাউড সমাধান">Cloud Solutions</h3>
+                    <p data-en="Cloud hosting, deployment, and infrastructure management services." data-bn="ক্লাউড হোস্টিং, ডিপ্লয়মেন্ট এবং ইনফ্রাস্ট্রাকচার ম্যানেজমেন্ট সেবা।">Cloud hosting, deployment, and infrastructure management services.</p>
+                    <a href="#" class="service-link" data-en="Learn More" data-bn="আরও জানুন">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-en="Our Work" data-bn="আমাদের কাজ">Our Work</span>
+                <h2 class="section-title" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="portfolio-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all" data-en="All" data-bn="সব">All</button>
+                <button class="filter-btn" data-filter="web" data-en="Web" data-bn="ওয়েব">Web</button>
+                <button class="filter-btn" data-filter="app" data-en="App" data-bn="অ্যাপ">App</button>
+                <button class="filter-btn" data-filter="design" data-en="Design" data-bn="ডিজাইন">Design</button>
+                <button class="filter-btn" data-filter="branding" data-en="Branding" data-bn="ব্র্যান্ডিং">Branding</button>
+            </div>
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Portfolio items loaded dynamically from localStorage -->
+            </div>
+            <div class="portfolio-empty" id="portfolioEmpty" style="display:none;">
+                <i class="fas fa-folder-open"></i>
+                <p data-en="No projects found. Add projects from Admin Panel." data-bn="কোনো প্রজেক্ট পাওয়া যায়নি। অ্যাডমিন প্যানেল থেকে প্রজেক্ট যোগ করুন।">No projects found. Add projects from Admin Panel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-en="Our People" data-bn="আমাদের মানুষ">Our People</span>
+                <h2 class="section-title" data-en="Meet Our Team" data-bn="আমাদের টিমের সাথে পরিচিত হন">Meet Our Team</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-delay="0">
+                    <div class="team-img">
+                        <div class="team-img-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Rakib Hassan</h4>
+                        <span data-en="Founder & CEO" data-bn="প্রতিষ্ঠাতা ও সিইও">Founder & CEO</span>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-delay="100">
+                    <div class="team-img">
+                        <div class="team-img-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Nusrat Jahan</h4>
+                        <span data-en="Lead Designer" data-bn="লিড ডিজাইনার">Lead Designer</span>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-delay="200">
+                    <div class="team-img">
+                        <div class="team-img-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Tanvir Ahmed</h4>
+                        <span data-en="Full Stack Developer" data-bn="ফুল স্ট্যাক ডেভেলপার">Full Stack Developer</span>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-delay="300">
+                    <div class="team-img">
+                        <div class="team-img-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Fariha Islam</h4>
+                        <span data-en="Marketing Lead" data-bn="মার্কেটিং লিড">Marketing Lead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-en="Feedback" data-bn="প্রতিক্রিয়া">Feedback</span>
+                <h2 class="section-title" data-en="What Clients Say" data-bn="ক্লায়েন্টরা কী বলেন">What Clients Say</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p data-en="GI Studio transformed our online presence completely. Their team delivered beyond our expectations with a stunning website." data-bn="জিআই স্টুডিও আমাদের অনলাইন উপস্থিতি সম্পূর্ণরূপে পরিবর্তন করেছে। তাদের টিম একটি অসাধারণ ওয়েবসাইট দিয়ে আমাদের প্রত্যাশার বাইরে ডেলিভারি দিয়েছে।">"GI Studio transformed our online presence completely. Their team delivered beyond our expectations with a stunning website."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user"></i></div>
+                            <div class="author-info">
+                                <h5>Kamal Uddin</h5>
+                                <span>CEO, TechBD</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p data-en="The mobile app they built for us increased our sales by 200%. Highly professional and creative team!" data-bn="তারা আমাদের জন্য যে মোবাইল অ্যাপ তৈরি করেছে তা আমাদের বিক্রয় ২০০% বাড়িয়েছে। অত্যন্ত পেশাদার এবং সৃজনশীল দল!">"The mobile app they built for us increased our sales by 200%. Highly professional and creative team!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user"></i></div>
+                            <div class="author-info">
+                                <h5>Sarah Ahmed</h5>
+                                <span>Founder, ShopEasy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p data-en="Outstanding branding work! They understood our vision perfectly and created a brand identity that truly represents us." data-bn="অসাধারণ ব্র্যান্ডিং কাজ! তারা আমাদের ভিশন পুরোপুরি বুঝেছে এবং একটি ব্র্যান্ড আইডেন্টিটি তৈরি করেছে যা সত্যিই আমাদের প্রতিনিধিত্ব করে।">"Outstanding branding work! They understood our vision perfectly and created a brand identity that truly represents us."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user"></i></div>
+                            <div class="author-info">
+                                <h5>Mehedi Hasan</h5>
+                                <span>Director, GreenLife</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="test-btn test-prev" onclick="slideTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="test-dots" id="testDots"></div>
+                    <button class="test-btn test-next" onclick="slideTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-en="Get in Touch" data-bn="যোগাযোগ করুন">Get in Touch</span>
+                <h2 class="section-title" data-en="Contact Us" data-bn="যোগাযোগ করুন">Contact Us</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4 data-en="Our Office" data-bn="আমাদের অফিস">Our Office</h4>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4 data-en="Call Us" data-bn="কল করুন">Call Us</h4>
+                            <p>+880 1XXX-XXXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4 data-en="Email Us" data-bn="ইমেইল করুন">Email Us</h4>
+                            <p>hello@gistudio.dev</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4 data-en="Working Hours" data-bn="কর্মঘণ্টা">Working Hours</h4>
+                            <p data-en="Sat - Thu: 9AM - 6PM" data-bn="শনি - বৃহঃ: সকাল ৯টা - সন্ধ্যা ৬টা">Sat - Thu: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrap" data-aos="fade-left">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name" data-en="Your Name" data-bn="আপনার নাম">Your Name</label>
+                                <span class="form-line"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email" data-en="Your Email" data-bn="আপনার ইমেইল">Your Email</label>
+                                <span class="form-line"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" required placeholder=" ">
+                            <label for="subject" data-en="Subject" data-bn="বিষয়">Subject</label>
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message" data-en="Your Message" data-bn="আপনার বার্তা">Your Message</label>
+                            <span class="form-line"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span data-en="Send Message" data-bn="বার্তা পাঠান">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C320,100 440,0 720,50 C1000,100 1120,0 1440,40 L1440,100 L0,100 Z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-gi">GI</span>
+                        <span class="logo-studio">STUDIO</span>
+                        <span class="logo-dev">DEV</span>
+                    </div>
+                    <p data-en="Transforming ideas into digital reality. We create stunning websites, apps, and brands that make an impact." data-bn="ধারণাকে ডিজিটাল বাস্তবতায় রূপান্তরিত করি। আমরা অসাধারণ ওয়েবসাইট, অ্যাপ এবং ব্র্যান্ড তৈরি করি যা প্রভাব ফেলে।">
+                        Transforming ideas into digital reality. We create stunning websites, apps, and brands that make an impact.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-en="Quick Links" data-bn="দ্রুত লিংক">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-en="Home" data-bn="হোম">Home</a></li>
+                        <li><a href="#about" data-en="About" data-bn="সম্পর্কে">About</a></li>
+                        <li><a href="#services" data-en="Services" data-bn="সেবাসমূহ">Services</a></li>
+                        <li><a href="#portfolio" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-en="Services" data-bn="সেবাসমূহ">Services</h4>
+                    <ul>
+                        <li><a href="#" data-en="Web Development" data-bn="ওয়েব ডেভেলপমেন্ট">Web Development</a></li>
+                        <li><a href="#" data-en="App Development" data-bn="অ্যাপ ডেভেলপমেন্ট">App Development</a></li>
+                        <li><a href="#" data-en="UI/UX Design" data-bn="ইউআই/ইউএক্স ডিজাইন">UI/UX Design</a></li>
+                        <li><a href="#" data-en="Branding" data-bn="ব্র্যান্ডিং">Branding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-en="Newsletter" data-bn="নিউজলেটার">Newsletter</h4>
+                    <p data-en="Subscribe to get our latest updates." data-bn="আমাদের সর্বশেষ আপডেট পেতে সাবস্ক্রাইব করুন।">Subscribe to get our latest updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GI Studio Development. <span data-en="All rights reserved." data-bn="সর্বস্বত্ব সংরক্ষিত।">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

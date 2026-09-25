@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GI Studio | Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <main class="admin-login" id="loginView">
+        <section class="admin-login-card">
+            <div class="admin-login-header">
+                <div class="admin-logo"><span class="logo-gi">GI</span><span class="logo-studio">STUDIO</span></div>
+                <h2>Portfolio admin</h2>
+                <p>Manage the projects shown on your website.</p>
+            </div>
+            <form id="loginForm">
+                <div class="admin-form-group"><i class="fas fa-user"></i><input id="adminEmail" type="email" placeholder="Email" required></div>
+                <div class="admin-form-group"><i class="fas fa-lock"></i><input id="adminPassword" type="password" placeholder="Password" required></div>
+                <button class="btn btn-primary btn-block" type="submit">Sign in <i class="fas fa-arrow-right"></i></button>
+            </form>
+            <p class="login-hint">Demo login: admin@gistudio.dev / admin123</p>
+        </section>
+    </main>
+
+    <main class="admin-dashboard" id="dashboardView" hidden>
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header"><div class="admin-logo"><span class="logo-gi">GI</span><span class="logo-studio">STUDIO</span></div><button class="sidebar-close" id="sidebarClose"><i class="fas fa-times"></i></button></div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link active" href="#projects"><i class="fas fa-layer-group"></i> Projects</a>
+                <a class="sidebar-link" href="index.html"><i class="fas fa-globe"></i> View website</a>
+            </nav>
+            <div class="sidebar-footer"><button class="sidebar-link" id="logoutButton"><i class="fas fa-right-from-bracket"></i> Sign out</button></div>
+        </aside>
+        <section class="admin-main">
+            <header class="admin-header"><button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button><h2>Portfolio manager</h2><div class="admin-header-right"><span class="admin-user"><i class="fas fa-circle-user"></i> Admin</span></div></header>
+            <div class="admin-tab active">
+                <div class="dashboard-stats">
+                    <div class="dash-stat-card"><div class="dash-stat-icon" style="background:var(--gradient)"><i class="fas fa-briefcase"></i></div><div class="dash-stat-info"><h3 id="projectCount">0</h3><p>Published projects</p></div></div>
+                    <div class="dash-stat-card"><div class="dash-stat-icon" style="background:var(--gradient-3)"><i class="fas fa-language"></i></div><div class="dash-stat-info"><h3>2</h3><p>Site languages</p></div></div>
+                </div>
+                <section class="admin-card">
+                    <h3><i class="fas fa-plus-circle"></i> Add portfolio project</h3>
+                    <form id="projectForm">
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="projectTitle">Project title</label><input id="projectTitle" required placeholder="e.g. Nova Finance"></div>
+                            <div class="admin-form-group"><label for="projectCategory">Category</label><select id="projectCategory"><option value="web">Web</option><option value="app">App</option><option value="design">Design</option><option value="branding">Branding</option></select></div>
+                        </div>
+                        <div class="admin-form-group"><label for="projectDescription">Short description</label><textarea id="projectDescription" rows="3" required placeholder="What did your team create?"></textarea></div>
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="projectImage">Image URL</label><input id="projectImage" type="url" required placeholder="https://..."><small>Use a public image URL for the project cover.</small></div>
+                            <div class="admin-form-group"><label for="projectUrl">Project link</label><input id="projectUrl" type="url" placeholder="https://..."></div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Publish project <i class="fas fa-arrow-up-right-from-square"></i></button>
+                    </form>
+                </section>
+                <section class="admin-card"><div class="card-header-flex"><h3><i class="fas fa-list"></i> Current projects</h3><button class="btn btn-outline" id="resetProjects" type="button">Restore demo data</button></div><div class="table-responsive"><table class="admin-table"><thead><tr><th>Project</th><th>Category</th><th>Action</th></tr></thead><tbody id="projectsTable"></tbody></table></div></section>
+            </div>
+        </section>
+    </main>
+    <div class="toast" id="toast"></div>
+    <script src="js/admin.js"></script>
+</body>
+</html>
