@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GI Studio | Admin Panel</title>
+    <title>JI Studio | Admin Panel</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,25 +11,29 @@
 <body class="admin-body">
     <main class="admin-login" id="loginView">
         <section class="admin-login-card">
+            <a class="admin-back-link" href="index.html"><i class="fas fa-arrow-left"></i> Back to website</a>
             <div class="admin-login-header">
-                <div class="admin-logo"><span class="logo-gi">GI</span><span class="logo-studio">STUDIO</span></div>
+                <div class="admin-logo"><span class="logo-gi">JI</span><span class="logo-studio">STUDIO</span></div>
                 <h2>Portfolio admin</h2>
                 <p>Manage the projects shown on your website.</p>
             </div>
             <form id="loginForm">
                 <div class="admin-form-group"><i class="fas fa-user"></i><input id="adminEmail" type="email" placeholder="Email" required></div>
-                <div class="admin-form-group"><i class="fas fa-lock"></i><input id="adminPassword" type="password" placeholder="Password" required></div>
+                <div class="admin-form-group"><i class="fas fa-lock"></i><input id="adminPassword" type="password" placeholder="Password" autocomplete="current-password" required></div>
                 <button class="btn btn-primary btn-block" type="submit">Sign in <i class="fas fa-arrow-right"></i></button>
             </form>
-            <p class="login-hint">Demo login: admin@gistudio.dev / admin123</p>
         </section>
     </main>
 
     <main class="admin-dashboard" id="dashboardView" hidden>
         <aside class="admin-sidebar" id="adminSidebar">
-            <div class="sidebar-header"><div class="admin-logo"><span class="logo-gi">GI</span><span class="logo-studio">STUDIO</span></div><button class="sidebar-close" id="sidebarClose"><i class="fas fa-times"></i></button></div>
+            <div class="sidebar-header"><div class="admin-logo"><span class="logo-gi">JI</span><span class="logo-studio">STUDIO</span></div><button class="sidebar-close" id="sidebarClose"><i class="fas fa-times"></i></button></div>
             <nav class="sidebar-nav">
-                <a class="sidebar-link active" href="#projects"><i class="fas fa-layer-group"></i> Projects</a>
+                <a class="sidebar-link active" href="#metrics"><i class="fas fa-chart-simple"></i> Homepage metrics</a>
+                <a class="sidebar-link" href="#inbox"><i class="fas fa-inbox"></i> Contact inbox <span class="inbox-count" id="inboxCount">0</span></a>
+                <a class="sidebar-link" href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
+                <a class="sidebar-link" href="#team"><i class="fas fa-users"></i> Team members</a>
+                <a class="sidebar-link" href="#projects"><i class="fas fa-layer-group"></i> Projects</a>
                 <a class="sidebar-link" href="index.html"><i class="fas fa-globe"></i> View website</a>
             </nav>
             <div class="sidebar-footer"><button class="sidebar-link" id="logoutButton"><i class="fas fa-right-from-bracket"></i> Sign out</button></div>
@@ -41,7 +45,77 @@
                     <div class="dash-stat-card"><div class="dash-stat-icon" style="background:var(--gradient)"><i class="fas fa-briefcase"></i></div><div class="dash-stat-info"><h3 id="projectCount">0</h3><p>Published projects</p></div></div>
                     <div class="dash-stat-card"><div class="dash-stat-icon" style="background:var(--gradient-3)"><i class="fas fa-language"></i></div><div class="dash-stat-info"><h3>2</h3><p>Site languages</p></div></div>
                 </div>
-                <section class="admin-card">
+                <section class="admin-card" id="metrics">
+                    <h3><i class="fas fa-chart-simple"></i> Homepage statistics</h3>
+                    <p class="admin-help-text">Set the figures shown in the homepage hero.</p>
+                    <form id="metricsForm">
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="metricProjects">Projects done</label><input id="metricProjects" type="number" min="0" max="999999" required></div>
+                            <div class="admin-form-group"><label for="metricClients">Happy clients</label><input id="metricClients" type="number" min="0" max="999999" required></div>
+                            <div class="admin-form-group"><label for="metricExperience">Years experience</label><input id="metricExperience" type="number" min="0" max="999" required></div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save statistics</button>
+                    </form>
+                </section>
+                <section class="admin-card" id="inbox">
+                    <div class="card-header-flex">
+                        <h3><i class="fas fa-inbox"></i> Contact messages</h3>
+                        <span class="inbox-summary" id="inboxSummary">0 messages</span>
+                    </div>
+                    <p class="admin-help-text">Messages submitted using the website contact form appear here.</p>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead><tr><th>From</th><th>Subject / Message</th><th>Date</th><th>Action</th></tr></thead>
+                            <tbody id="messagesTable"></tbody>
+                        </table>
+                    </div>
+                    <div class="empty-state" id="messagesEmpty"><i class="fas fa-envelope-open"></i><p>No contact messages received yet.</p></div>
+                </section>
+                <section class="admin-card" id="testimonials">
+                    <h3><i class="fas fa-comments"></i> Client testimonials</h3>
+                    <p class="admin-help-text">Add genuine client feedback. The website rotates through published testimonials automatically and also has next/previous controls.</p>
+                    <form id="testimonialForm">
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="testimonialName">Client name</label><input id="testimonialName" required maxlength="80"></div>
+                            <div class="admin-form-group"><label for="testimonialRole">Role / company</label><input id="testimonialRole" required maxlength="100"></div>
+                        </div>
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="testimonialQuoteEn">Comment (English)</label><textarea id="testimonialQuoteEn" rows="3" required maxlength="600"></textarea></div>
+                            <div class="admin-form-group"><label for="testimonialQuoteBn">Comment (Bangla, optional)</label><textarea id="testimonialQuoteBn" rows="3" maxlength="600"></textarea></div>
+                        </div>
+                        <div class="admin-form-group"><label for="testimonialRating">Rating</label><select id="testimonialRating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></div>
+                        <button class="btn btn-primary" type="submit">Add client comment</button>
+                    </form>
+                    <div class="table-responsive mt-20">
+                        <table class="admin-table"><thead><tr><th>Client</th><th>Comment</th><th>Rating</th><th>Action</th></tr></thead><tbody id="testimonialsTable"></tbody></table>
+                    </div>
+                    <div class="empty-state" id="testimonialsEmpty"><i class="fas fa-comment-slash"></i><p>No client comments added yet.</p></div>
+                </section>
+                <section class="admin-card" id="team">
+                    <h3><i class="fas fa-users"></i> Team members</h3>
+                    <p class="admin-help-text">Add a team member's public profile, photo, job title, and social links.</p>
+                    <form id="teamForm">
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="workerName">Name</label><input id="workerName" required maxlength="80"></div>
+                            <div class="admin-form-group"><label for="workerTitle">Job title</label><input id="workerTitle" required maxlength="100"></div>
+                        </div>
+                        <div class="admin-form-group"><label for="workerImage">Profile image URL</label><input id="workerImage" type="url" required placeholder="https://..."></div>
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="workerFacebook">Facebook URL</label><input id="workerFacebook" type="url" placeholder="https://facebook.com/..."></div>
+                            <div class="admin-form-group"><label for="workerInstagram">Instagram URL</label><input id="workerInstagram" type="url" placeholder="https://instagram.com/..."></div>
+                        </div>
+                        <div class="admin-form-row">
+                            <div class="admin-form-group"><label for="workerLinkedin">LinkedIn URL</label><input id="workerLinkedin" type="url" placeholder="https://linkedin.com/in/..."></div>
+                            <div class="admin-form-group"><label for="workerGithub">GitHub URL</label><input id="workerGithub" type="url" placeholder="https://github.com/..."></div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Add team member</button>
+                    </form>
+                    <div class="table-responsive mt-20">
+                        <table class="admin-table"><thead><tr><th>Name</th><th>Title</th><th>Action</th></tr></thead><tbody id="teamTable"></tbody></table>
+                    </div>
+                    <div class="empty-state" id="teamTableEmpty"><i class="fas fa-user-plus"></i><p>No team members added yet.</p></div>
+                </section>
+                <section class="admin-card" id="projects">
                     <h3><i class="fas fa-plus-circle"></i> Add portfolio project</h3>
                     <form id="projectForm">
                         <div class="admin-form-row">
@@ -53,6 +127,7 @@
                             <div class="admin-form-group"><label for="projectImage">Image URL</label><input id="projectImage" type="url" required placeholder="https://..."><small>Use a public image URL for the project cover.</small></div>
                             <div class="admin-form-group"><label for="projectUrl">Project link</label><input id="projectUrl" type="url" placeholder="https://..."></div>
                         </div>
+                        <div class="admin-form-group"><label for="projectDate">Added date</label><input id="projectDate" type="date" required></div>
                         <button class="btn btn-primary" type="submit">Publish project <i class="fas fa-arrow-up-right-from-square"></i></button>
                     </form>
                 </section>
